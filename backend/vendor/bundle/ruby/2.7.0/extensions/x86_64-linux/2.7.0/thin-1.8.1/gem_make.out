@@ -1,0 +1,17 @@
+current directory: /mnt/e/codes/phase-3-project/backend/vendor/bundle/ruby/2.7.0/gems/thin-1.8.1/ext/thin_parser
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 -r ./siteconf20220906-13501-r4ft5p.rb extconf.rb
+checking for main() in -lc... yes
+creating Makefile
+
+current directory: /mnt/e/codes/phase-3-project/backend/vendor/bundle/ruby/2.7.0/gems/thin-1.8.1/ext/thin_parser
+make DESTDIR\= clean
+
+current directory: /mnt/e/codes/phase-3-project/backend/vendor/bundle/ruby/2.7.0/gems/thin-1.8.1/ext/thin_parser
+make DESTDIR\=
+compiling parser.c
+compiling thin.c
+linking shared-object thin_parser.so
+
+current directory: /mnt/e/codes/phase-3-project/backend/vendor/bundle/ruby/2.7.0/gems/thin-1.8.1/ext/thin_parser
+make DESTDIR\= install
+/usr/bin/install -m 0755 thin_parser.so ./.gem.20220906-13501-a95apm
