@@ -1,38 +1,251 @@
-.App {
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Global styles */
+html, body, .App{
+  min-height: 100%;
+  width: 100%;
+ 
+}
+.navbar {
+  width: 100%;
+  height: 10vh;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo a  {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: rgb(219, 218, 218);
+  text-transform: lowercase;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar .logo a:hover {
+  color: #fff;
+}
+
+.navbar .logo a h1 > .lg{
+  font-size: 2rem;
+  color: rgb(163, 163, 26);
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 30%;
+  height: 100%;
+  font-size: medium;
+}
+
+.navbar .nav-links a{
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(182, 181, 181);
+}
+
+.navbar .nav-links a:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4rem;
+}
+
+.navbar .nav-links a:last-child:hover {
+  color: #fff;
+  background: none;
+}
+.home > h2{
+  text-align: center;
+  color: #0400ff;
+}
+.home > img{
+  position: fixed;
+  top:1rem;
+  width: 100%;
+  height: 100vh;
+  object-fit:cover;
+  filter: grayscale(0.3);
+}
+
+
+.book-list {
+  min-height: 80vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  text-align: center;
+}
+.favorites {
+  min-height: 80vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.book-details {
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* text-align: center; */
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.book-image {
+  margin: 0 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.book-description {
+  margin: 0x 10px;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+.book {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px;
+  background: black;
   color: white;
+  width: 300px;
+  font-size: 20px;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+/*Add a book*/
+.new-book{
+  position: relative;
+  background-color: #01010f;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: #fff;
+  padding: 0 10rem 0 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.new-book > .sideA{
+  position: relative;
+  min-height: inherit;
+  margin-top: 4rem;
+}
+
+.new-book > .sideA img{
+  width: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.new-book > .sideA .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 1, 0.514);
+}
+
+.new-book > .sideB{
+  position: relative;
+  min-height: inherit;
+  margin-top: 1rem;
+  padding-left: 5rem;
+}
+
+.new-book > .sideB > h3{
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: 2rem 0;
+}
+
+.new-book > .sideB > form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.new-book > .sideB > form > input, textarea{
+  width: 100%;
+  height: 3rem;
+  border: 1px solid rgb(45, 172, 6);
+  border-radius: 5px;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.new-book > .sideB > form > textarea{
+  height: 10rem;
+  border-radius: 5px;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.new-book > .sideB > form > label{
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.new-book > .sideB > form > button{
+  width: 100%;
+  height: 3rem;
+  border: 1px solid rgb(45, 172, 6);
+  border-radius: 5px;
+  background-color: rgb(45, 172, 6);
+  color: rgb(4, 2, 19);
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.new-book > .sideB > form > button:hover{
+  background-color: rgb(2, 3, 19);
+  color: rgb(45, 172, 6);
+  transition: all 0.5s ease-in-out;
 }
