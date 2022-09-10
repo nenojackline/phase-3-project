@@ -11,6 +11,7 @@ const AddBook = () =>{
   const [author_id, setAuthor_id] = useState('');
   const [category_id, setCategory_id] = useState('');
   
+
   //console.log(genres.split(" "));
   const checkValidInputs = (title, description, image_url, publisher,  author_id, category_id) => {
     //ensure no empty values submited to the db
@@ -19,7 +20,7 @@ const AddBook = () =>{
       return true;
     }
   }
-  //submit handler for created movies
+  //submit handler for created book
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -61,7 +62,6 @@ const AddBook = () =>{
     setCategory_id("");
     
   }
-
 
 
   return (
