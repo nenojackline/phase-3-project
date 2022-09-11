@@ -37,7 +37,7 @@ const Favorites = () => {
           </div>
         ))
       ) : (
-        <h1>You don't have any favorite books yet!</h1>
+        <h3>You don't have any favorite books yet!</h3>
       )}
     </div>
   );
