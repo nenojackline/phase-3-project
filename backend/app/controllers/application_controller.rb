@@ -29,12 +29,24 @@ class ApplicationController < Sinatra::Base
     book.update(description: params[:description]) if params[:description]
       book.to_json(include: :author)
   end
+  patch '/books/:id' do
+    book = Book.find(params[:id])
+    book.update(
+    title: params[:title],
+      description: params[:description],
+      image_url: params[:image_url],
+      author_id: params[:author_id]
+    )
+    book.to_json
+  end
 
   delete '/books/:id' do 
     book = Book.find_by(id: params[:id])
     book.destroy
     book.to_json
   end
+
+
 
   post '/authors' do
     new_author = Author.create(name: params[:name], city: params[:city])
@@ -62,6 +74,15 @@ class ApplicationController < Sinatra::Base
   post '/categories' do
     new_category = Category.create(category_name: params[:category_name])
     new_category.to_json
+  end
+  
+  patch '/categories/:id' do
+    category = Category.find(params[:id])
+    category.update(
+      category_name: params[:category_name],
+      category_id: params[:category_id],
+    )
+    category.to_json
   end
 
 
