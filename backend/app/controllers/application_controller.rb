@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
     book.to_json
   end
 
-
+#Authors Routes
 
   post '/authors' do
     new_author = Author.create(name: params[:name], city: params[:city])
@@ -58,6 +58,14 @@ class ApplicationController < Sinatra::Base
     author.to_json   
   end
 
+  patch '/authors/:id' do
+    author = Author.find(params[:id])
+    author.update(
+    name: params[:name],
+  )
+  author.to_json
+  end
+
   post "/book/author/:book_id/:author_id" do
     book = Book.find_by(id: params[:book_id])
     author_instance = Author.find_by(id: params[:author_id])
@@ -65,7 +73,7 @@ class ApplicationController < Sinatra::Base
     book.save
     book.to_json(include: :author)
   end
-
+#Categories Routes
   get '/categories' do
     category = Category.all
     category.to_json   
