@@ -32,8 +32,12 @@ A user visiting this page would be able to see:
 
 ### Technology Used
 ---
-Used Visual Studio Code editor to create the front-end with _**React**_ 
+- Used Visual Studio Code editor to create the front-end with _**React**_ 
 - **React** - help in creating interactive website
+- HTML
+- CSS
+- Ruby
+- Sinatra DSL
 
 ## Development
 
