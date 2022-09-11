@@ -22,15 +22,15 @@ const BookDetails = () => {
   return (
     <div className="book-details">
       <div className="book-image">
-        <h2>{book?.title}</h2>
+        <h3>{book?.title}</h3>
         <img src={book?.image_url} alt="#" />
       </div>
       <div className="book-description">
-        <h2>Description</h2>
+        <h3>Description</h3>
         <p>{book?.description}</p>
-        <h2>Author</h2>
+        <h3>Author</h3>
         <p>{book?.author}</p>
-        <h2>Category</h2>
+        <h3>Category</h3>
         <p>{book?.category}</p>
       </div>
     </div>
