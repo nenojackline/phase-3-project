@@ -7,7 +7,7 @@ function RemoveBook() {
   const [books, setBooks] = useState([]);
 
 
-  // fetch items from cart db table
+  // fetch books from book db
   useEffect(() => {
     fetch("http://localhost:9292/books")
       .then((response) => response.json())
@@ -17,7 +17,7 @@ function RemoveBook() {
       });
   }, []);
 
-  // delete item from cart
+  // delete book
   const handleDelete = (book) => {
     console.log(book);
     const title = book.title
